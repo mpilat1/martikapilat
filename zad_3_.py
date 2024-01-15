@@ -6,7 +6,12 @@ class Property:
         self.address = address
 
     def __str__(self):
-        return f"Property: {self.area} sqm, {self.rooms} rooms, priced at {self.price}, located at {self.address}"
+        return f"Property: {self.area} " \
+               f"sqm, {self.rooms} " \
+               f"rooms," \
+               f" priced at {self.price}," \
+               f" located at {self.address}"
+
 
 class House(Property):
     def __init__(self, area, rooms, price, address, plot):
@@ -14,7 +19,14 @@ class House(Property):
         self.plot = plot
 
     def __str__(self):
-        return f"House: {self.area} sqm, {self.rooms} rooms, priced at {self.price}, located at {self.address}, plot size {self.plot} sqm"
+        return f"House: {self.area} " \
+               f"sqm, {self.rooms} " \
+               f"rooms, " \
+               f"priced at {self.price}, " \
+               f"located at {self.address}," \
+               f" plot size {self.plot} " \
+               f"sqm"
+
 
 class Flat(Property):
     def __init__(self, area, rooms, price, address, floor):
@@ -22,7 +34,12 @@ class Flat(Property):
         self.floor = floor
 
     def __str__(self):
-        return f"Flat: {self.area} sqm, {self.rooms} rooms, priced at {self.price}, located at {self.address}, on floor {self.floor}"
+        return f"Flat: {self.area} sqm, {self.rooms}" \
+               f" rooms," \
+               f" priced at {self.price}, " \
+               f"located at {self.address}, " \
+               f"on floor {self.floor}"
+
 
 # Tworzenie obiektu klasy House
 house = House(200, 5, "500,000 USD", "123 Main St", 1500)

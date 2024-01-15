@@ -15,7 +15,7 @@ class Student:
         average_marks = sum(self.marks) / len(self.marks)
         return average_marks > 50
 
-# Tworzenie dwóch przykładowych obiektów klasy Student
+
 student1 = Student("Lukasz", [70, 75, 80, 90])
 student2 = Student("Daniel", [20, 30, 60, 45])
 

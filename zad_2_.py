@@ -7,11 +7,20 @@ class Library:
         self.phone = phone
 
     def __str__(self):
-        return f"Library\n  City: {self.city}\n  Street: {self.street}\n  Zip Code: {self.zip_code}\n  Open Hours: {self.open_hours}\n  Phone: {self.phone}"
+        return f"Library\n  City: {self.city}\n " \
+               f" Street: {self.street}\n " \
+               f" Zip Code: {self.zip_code}\n  " \
+               f"Open Hours: {self.open_hours}\n" \
+               f"  Phone: {self.phone}"
 
 
 class Employee:
-    def __init__(self, first_name, last_name, hire_date, birth_date, city, street, zip_code, phone):
+    def __init__(self, first_name,
+                 last_name,
+                 hire_date,
+                 birth_date,
+                 city, street,
+                 zip_code: object, phone):
         self.first_name = first_name
         self.last_name = last_name
         self.hire_date = hire_date
@@ -22,19 +31,33 @@ class Employee:
         self.phone = phone
 
     def __str__(self):
-        return f"Employee\n  Name: {self.first_name} {self.last_name}\n  Hire Date: {self.hire_date}\n  Birth Date: {self.birth_date}\n  Address: {self.city}, {self.street}, {self.zip_code}\n  Phone: {self.phone}"
+        return f"Employee\n  Name: {self.first_name} {self.last_name}\n  " \
+               f"Hire Date: {self.hire_date}\n  " \
+               f"Birth Date: {self.birth_date}\n " \
+               f" Address: {self.city}, {self.street}, {self.zip_code}\n  " \
+               f"Phone: {self.phone}"
 
 
 class Book:
-    def __init__(self, library, publication_date, author_name, author_surname, number_of_pages):
+    def __init__(self, library,
+                 publication_date,
+                 author_name,
+                 author_surname,
+                 number_of_pages):
         self.library = library
         self.publication_date = publication_date
-        self.author_name = author_name
+        self.author_name = \
+            author_name
         self.author_surname = author_surname
         self.number_of_pages = number_of_pages
 
     def __str__(self):
-        return f"Book\n  Author: {self.author_name} {self.author_surname}\n  Publication Date: {self.publication_date}\n  Number of Pages: {self.number_of_pages}\n  Library: {self.library}"
+        return f"Book\n  " \
+               f"Author: {self.author_name}" \
+               f" {self.author_surname}\n  " \
+               f"Publication Date: {self.publication_date}\n" \
+               f"  Number of Pages: {self.number_of_pages}\n  " \
+               f"Library: {self.library}"
 
 
 class Student:
@@ -43,7 +66,9 @@ class Student:
         self.marks = marks
 
     def __str__(self):
-        return f"Student\n  Name: {self.name}\n  Marks: {self.marks}"
+        return f"Student\n  " \
+               f"Name: {self.name}\n " \
+               f" Marks: {self.marks}"
 
 
 class Order:
@@ -53,18 +78,47 @@ class Order:
         self.books = books
         self.order_date = order_date
 
+    @property
     def __str__(self):
         books_str = '\n  '.join(str(book) for book in self.books)
-        return f"Order\n  Employee: {self.employee}\n  Student: {self.student}\n  Order Date: {self.order_date}\n  Books:\n  {books_str}"
+        return f"Order\n  Employee: {self.employee}\n " \
+               f" Student: {self.student}\n  " \
+               f"Order Date: {self.order_date}\n  " \
+               f"Books:\n  {books_str}"
 
 
 # Tworzenie obiektów
-library1 = Library("Warsaw", "Main St", "00-001", "9-17", "123-456-789")
-library2 = Library("Krakow", "Second St", "00-002", "10-18", "987-654-321")
+library1 = Library("Warsaw",
+                   "Main St",
+                   "00-001", "9-17",
+                   "123-456-789")
+library2 = Library("Krakow",
+                   "Second St",
+                   "00-002",
+                   "10-18",
+                   "987-654-321")
 
-employee1 = Employee("Jan", "Kowalski", "2020-01-01", "1980-01-01", "Warsaw", "Main St", "00-001", "123-456-789")
-employee2 = Employee("Anna", "Nowak", "2021-02-02", "1990-02-02", "Krakow", "Second St", "00-002", "987-654-321")
-employee3 = Employee("Piotr", "Wiśniewski", "2022-03-03", "2000-03-03", "Warsaw", "Main St", "00-001", "123-456-789")
+employee1 = Employee("Jan",
+                     "Kowalski",
+                     "2020-01-01",
+                     "1980-01-01",
+                     "Warsaw",
+                     "Main St",
+                     "00-001",
+                     "123-456-789")
+employee2 = Employee("Anna",
+                     "Nowak",
+                     "2021-02-02",
+                     "1990-02-02",
+                     "Krakow",
+                     "Second St",
+                     "00-002",
+                     "987-654-321")
+employee3 = Employee("Piotr", "Wiśniewski",
+                     "2022-03-03", "2000-03-03",
+                     "Warsaw", "Main St",
+                     "00-001",
+                     "123-456-789")
 
 student1 = Student("Marek", [5, 4, 3])
 student2 = Student("Ewa", [5, 5, 5])
